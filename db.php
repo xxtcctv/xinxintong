@@ -1,4 +1,11 @@
 <?php
+/**
+ * 加载本地化设置
+ */
+file_exists('cus/app.php') && include_once('cus/app.php');
+/**
+ * database
+ */
 if (defined('SAE_MYSQL_HOST_M')) {
     $host = SAE_MYSQL_HOST_M;
     $port = SAE_MYSQL_PORT;
@@ -6,11 +13,11 @@ if (defined('SAE_MYSQL_HOST_M')) {
     $pwd = SAE_MYSQL_PASS;
     $dbname = SAE_MYSQL_DB;
 } else {
-    $host = 'localhost';
-    $port = '3306';
-    $user = 'jason';
-    $pwd = '123456';
-    $dbname = 'xxt';
+    $host = TMS_MYSQL_HOST;
+    $port = TMS_MYSQL_PORT;
+    $user = TMS_MYSQL_USER;
+    $pwd = TMS_MYSQL_PASS;
+    $dbname = TMS_MYSQL_DB;
 }
 
 $mysqli = new mysqli("{$host}:{$port}", $user, $pwd, $dbname);
