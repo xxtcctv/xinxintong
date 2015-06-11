@@ -47,7 +47,7 @@ class main extends \xxt_base {
         $q = array(
             'a.title,a.summary,a.pic,a.body,a.weight,e.occured_time,e.occured_lat,e.occured_lng',
             'xxt_article a, xxt_article_extinfo e',
-            "a.id=e.article_id"
+            "a.id=$articleid and a.id=e.article_id"
         );
         
         $article = $this->model()->query_obj_ss($q);
@@ -69,7 +69,7 @@ class main extends \xxt_base {
         $month = date('n', $current);
         
         $q = array(
-            'a.title,a.summary,a.weight,e.occured_time',
+            'a.id,a.title,a.summary,a.weight,e.occured_time',
             'xxt_article a, xxt_article_extinfo e',
             "a.id=e.article_id and e.occured_month=$month and e.occured_day=$day"
         );
@@ -151,9 +151,9 @@ class main extends \xxt_base {
     public function nearby_action($articleid, $size=10)
     {
         $q = array(
-            'a.title,a.summary,a.weight,e.occured_time,d.distance',
-            'xxt_article a, xxt_article_extinfo e, xxt_article_ext_distance d',
-            "a.id=$articleid and a.id=e.article_id and a.id=d.article_id_a"
+            'd.distance,a.id,a.title,a.summary,e.occured_time',
+            'xxt_article_extinfo e, xxt_article_ext_distance d,xxt_article a',
+            "e.article_id=$articleid and e.article_id=d.article_id_a and d.article_id_b<>$articleid and a.id=d.article_id_b"
         );
         $q2 = array(
             'o'=>'d.distance asc',
