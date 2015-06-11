@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app='kzrl' ng-controller='ctrl' ng-cloak class='ng-cloak'>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>抗战日历</title>
+    </head>
+    
+    <body>
+        <div id='todays'>
+            <div ng-repeat='t in todays' ng-click='openOne(t)'>
+                <div>{{t.title}}</div>
+                <div>{{t.summary}}</div>
+                <div>{{t.occured_time*1000|date:'yyyy-MM-dd'}}</div>
+            </div>
+        </div>
+        <button ng-click='timeline()'>timeline</button>
+        <script src='/static/js/angular.min.js'></script>
+        <script src='today.js'></script>
+    </body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='kzrl' ng-controller='ctrl' ng-cloak class='ng-cloak'>
+    
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    
+    <body>
+        <div id='incidents'>
+            <div ng-repeat='i in incidents' ng-click='openOne(i)'>
+                <div>{{i.title}}</div>
+                <div>{{i.summary}}</div>
+                <div>{{i.occured_time*1000|date:'yyyy-MM-dd'}}</div>
+            </div>
+        </div>
+        <script src='/static/js/angular.min.js'></script>
+        <script src='nearby.js'></script>
+    </body>
+
+</html>

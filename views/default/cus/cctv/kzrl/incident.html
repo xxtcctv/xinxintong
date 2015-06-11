@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app='kzrl' ng-controller='ctrl' ng-cloak class='ng-cloak'>
+    
+    <head>
+        <meta charset="utf-8">
+        <title ng-bind='incident.title'></title>
+    </head>
+    
+    <body>
+        <div ng-bind="incident.title"></div>
+        <div ng-bind="incident.summary"></div>
+        <div ng-bind="incident.pic"></div>
+        <div ng-bind="incident.body"></div>
+        <div ng-bind="incident.distance"></div>
+        <button ng-click='openNearby()'>查询周边的事件</button>
+        <script src='/static/js/angular.min.js'></script>
+        <script src='incident.js'></script>
+    </body>
+
+</html>

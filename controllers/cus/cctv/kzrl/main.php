@@ -120,7 +120,7 @@ class main extends \xxt_base {
             );
             
             if ($backwards = $this->model()->query_objs_ss($q, $q2)){
-                $backwards = array_reverse($forward);
+                $backwards = array_reverse($backwards);
             }
             $result = $backwards;
         }
