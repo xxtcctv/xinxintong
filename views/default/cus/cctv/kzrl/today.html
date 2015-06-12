@@ -14,7 +14,9 @@
                 <div>{{t.occured_time*1000|date:'yyyy-MM-dd'}}</div>
             </div>
         </div>
-        <button ng-click='timeline()'>timeline</button>
+        <button ng-click="timeline()">timeline</button>
+        <button ng-click="timeline('F')">forward</button>
+        <button ng-click="timeline('B')">backward</button>
         <script src='/static/js/angular.min.js'></script>
         <script src='today.js'></script>
     </body>

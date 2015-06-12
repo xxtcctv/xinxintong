@@ -98,7 +98,7 @@ class main extends \xxt_base {
             $q = array(
                 'e.occured_time',
                 'xxt_article_extinfo e',
-                'e.article_id=$article_id'    
+                "e.article_id=$articleid"    
             );
             $start = $this->model()->query_val_ss($q);
         }
@@ -110,7 +110,7 @@ class main extends \xxt_base {
          */
         if ($direction === 'T' || $direction === 'B') {
             $q = array(
-                'a.title,a.summary,a.weight,e.occured_time',
+                'a.id,a.title,a.summary,a.weight,e.occured_time',
                 'xxt_article a, xxt_article_extinfo e',
                 "a.id=e.article_id and (e.occured_month<$month or (e.occured_month=$month and e.occured_day<=$day))"
             );
@@ -129,7 +129,7 @@ class main extends \xxt_base {
          */
         if ($direction === 'T' || $direction === 'F') {
             $q = array(
-                'a.title,a.summary,a.weight,e.occured_time',
+                'a.id,a.title,a.summary,a.weight,e.occured_time',
                 'xxt_article a, xxt_article_extinfo e',
                 "a.id=e.article_id and (e.occured_month>$month or (e.occured_month=$month and e.occured_day>$day))"
             );
