@@ -2,7 +2,7 @@
 /**
  * 加载本地化设置
  */
-file_exists(dirname(__FILE__).'/cus/app.php') && include_once('cus/app.php');
+file_exists(dirname(__FILE__).'/cus/app.php') && include_once(dirname(__FILE__).'/cus/app.php');
 /**
  * database
  */

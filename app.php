@@ -73,7 +73,7 @@ include_once 'db.php';
 /**
  * 加载本地化设置
  */
-file_exists(dirname(__FILE__).'/cus/app.php') && include_once('cus/app.php');
+file_exists(dirname(__FILE__).'/cus/app.php') && include_once(dirname(__FILE__).'/cus/app.php');
 /**
  * 常量定义不允许被覆盖，需要检查常量是否已经被定义
  */
